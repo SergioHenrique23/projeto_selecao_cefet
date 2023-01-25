@@ -1,9 +1,9 @@
 package projeto_selecao_cefet;
 
-public class Secretario extends Cargo {
+public class Secretario extends Funcionario {
 	final double SALARIO = 7000.00;
 
-	private Secretario(int mes_contrat, int ano_contrat, String nome) {
+	protected Secretario(int mes_contrat, int ano_contrat, String nome) {
 		super(mes_contrat, ano_contrat, nome);
 	}
 

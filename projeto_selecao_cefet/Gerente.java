@@ -1,6 +1,6 @@
 package projeto_selecao_cefet;
 
-public class Gerente extends Cargo{
+public class Gerente extends Funcionario{
 
 	final double SALARIO = 20000.00;
 	
