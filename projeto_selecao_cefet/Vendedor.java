@@ -19,11 +19,17 @@ public class Vendedor extends Funcionario {
 				salario = salario + 1800*(ano - super.getAno_contrat() - 1);
 			}
 		}
+		if (ano < super.getAno_contrat() || (ano == super.getAno_contrat() && mes < super.getMes_contrat()) ) {// no caso da data o funcionario nao 
+			return 0; //tiver sido contratado na data
+		}
 		return salario;
 	}
 
 	@Override
 	public double getBonus(int mes, int ano) {
+		if (ano < super.getAno_contrat() || (ano == super.getAno_contrat() && mes < super.getMes_contrat()) ) {// no caso da data o funcionario nao 
+			return 0; //tiver sido contratado na data
+		}
 		double bonus = 0;
 		try {
 			bonus = (Registro.obterValor(super.getNome(),mes,ano) * 3)/10;

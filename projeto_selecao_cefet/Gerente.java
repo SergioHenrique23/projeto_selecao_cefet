@@ -18,6 +18,9 @@ public class Gerente extends Funcionario{
 				salario = salario + 3000.00*(ano - super.getAno_contrat() - 1);
 			}
 		}
+		if (ano < super.getAno_contrat() || (ano == super.getAno_contrat() && mes < super.getMes_contrat()) ) {// no caso da data o funcionario nao 
+			return 0; //tiver sido contratado na data
+		}
 		return salario;
 	}
 	
