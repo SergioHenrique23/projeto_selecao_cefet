@@ -199,6 +199,7 @@ public class Principal {
 				break;
 			default:
 				System.exit(0);
+				break;
 			}
 			
 		}
