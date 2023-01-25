@@ -12,11 +12,11 @@ public class Vendedor extends Funcionario {
 	@Override
 	public double getSalario(int mes, int ano) {
 		double salario = SALARIO;
-		if(ano > ano_contrat ) {
-			if(mes >= mes_contrat ) {
-				salario = salario + 1200*(ano - ano_contrat);
-			}else if((ano - ano_contrat) > 1 ) {
-				salario = salario + 1200*(ano - ano_contrat - 1);
+		if(ano > super.getAno_contrat() ) {
+			if(mes >= super.getMes_contrat() ) {
+				salario = salario + 1800*(ano - super.getAno_contrat());
+			}else if((ano - super.getAno_contrat()) > 1 ) {
+				salario = salario + 1800*(ano - super.getAno_contrat() - 1);
 			}
 		}
 		return salario;
@@ -26,7 +26,7 @@ public class Vendedor extends Funcionario {
 	public double getBonus(int mes, int ano) {
 		double bonus = 0;
 		try {
-			bonus = (Registro.obterValor(getNome(),mes,ano) * 3)/10;
+			bonus = (Registro.obterValor(super.getNome(),mes,ano) * 3)/10;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

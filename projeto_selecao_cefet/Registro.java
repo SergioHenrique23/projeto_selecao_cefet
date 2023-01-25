@@ -10,15 +10,19 @@ public class Registro {
 	public static double obterValor(String nome, int mes, int ano) {
 		Map<String, Integer> map = new HashMap<String, Integer>();//Map que associa a data ao indice da matriz de registro
 		
-		map.put("12/2022", 0);
+		map.put("12/2021", 0);
 		map.put("1/2022", 1);
 		map.put("2/2022", 2);
 		map.put("3/2022", 3);
 		map.put("3/2022", 4);
 		
-		String data = String.valueOf(mes) + "/" + String.valueOf(ano);
+		String m = Integer.toString(mes);
+		String year = Integer.toString(ano);
 		
-		int indice = map.get(data);
+		String data = m.concat("/").concat(year);
+		System.out.println("data" + data);
+		
+		Integer indice = map.get(data);
 		double valor = 0;
 		if(nome.equals("Ana Silva")) {
 			valor = regist[0][indice];

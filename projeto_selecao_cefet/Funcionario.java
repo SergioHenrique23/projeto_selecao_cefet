@@ -2,9 +2,9 @@ package projeto_selecao_cefet;
 
 public abstract class Funcionario {
 
-	protected int ano_contrat;
-	protected int mes_contrat;
-	protected String nome;
+	private int ano_contrat;
+	private int mes_contrat;
+	private String nome;
 	
 	protected Funcionario (int mes_contrat, int ano_contrat, String nome) {
 		this.mes_contrat = mes_contrat;
@@ -21,6 +21,12 @@ public abstract class Funcionario {
 	}
 	public String getNome() {
 		return this.nome;
+	}
+	public int getAno_contrat() {
+		return this.ano_contrat;
+	}
+	public int getMes_contrat() {
+		return this.mes_contrat;
 	}
 	
 }
