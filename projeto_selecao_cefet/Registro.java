@@ -14,7 +14,7 @@ public class Registro {
 		map.put("1/2022", 1);
 		map.put("2/2022", 2);
 		map.put("3/2022", 3);
-		map.put("3/2022", 4);
+		map.put("4/2022", 4);
 		
 		String m = Integer.toString(mes);
 		String year = Integer.toString(ano);

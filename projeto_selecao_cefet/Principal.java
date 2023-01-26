@@ -131,6 +131,7 @@ public class Principal {
 			System.out.println("4 - Funcionario que recebeu maior salario em determinado mês");
 			System.out.println("5 - Funcionario que recebeu maior bonus em determinado mês");
 			System.out.println("6 - Vendedor que mais vendeu em determinado mes");
+			System.out.println("7 - Todos as funções anteriores de 12/2021 a 04/2022");
 			System.out.println("(Qualque outro numero) - Sair");
 			System.out.println("Digite o numero");
 			op = input.nextInt();
@@ -196,6 +197,32 @@ public class Principal {
 				Funcionario mais_vendeu = maiorVendas(lista_Vendedores,mes,ano);
 				double valor_vendido = Registro.obterValor(mais_vendeu.getNome(), mes, ano);
 				System.out.printf("Na data %d/%d quem mais vendeu foi o(a) %s o valor foi: R$ %.2f \n", mes, ano, mais_vendeu.getNome(), valor_vendido);
+				break;
+			case 7:
+				int mo = 12;
+				ano = 2021;
+				while (mo != 5) {
+					System.out.printf("%d/%d \n", mo, ano);
+					valorTotal = salarioTotal(lista_Completa,mo ,ano);
+					System.out.printf("O valor da soma de todos os salarios nessa data (%d/%d) é: R$ %.2f \n",mo, ano, valorTotal);
+					valor_SBonus = salarioSemBonus(lista_Completa,mo,ano);
+					System.out.printf("O valor da soma de todos os salarios sem os bonus nessa data (%d/%d) é: R$ %.2f \n ",mo, ano, valor_SBonus);
+					valor_Bonus = somenteBonus(lista_Beneficios,mo,ano);
+					System.out.printf("O valor da soma dos bonus nessa data (%d/%d) é: R$ %.2f \n",mo, ano, valor_Bonus);
+					ganha_mais = maiorSalario(lista_Completa,mo,ano);
+					System.out.printf("Na data %d/%d quem mais recebeu foi o(a) %s o valor foi: R$ %.2f \n",mo, ano, ganha_mais.getNome(), ganha_mais.getSalarioTotal(mo,ano));
+					maior_bonus = maiorBonus(lista_Beneficios,mo,ano);
+					System.out.printf("Na data %d/%d quem recebeu o maior bonus foi o(a) %s o valor foi: R$ %.2f \n",mo, ano, maior_bonus.getNome(), maior_bonus.getBonus(mo, ano));
+					mais_vendeu = maiorVendas(lista_Vendedores,mo,ano);
+					valor_vendido = Registro.obterValor(mais_vendeu.getNome(), mo, ano);
+					System.out.printf("Na data %d/%d quem mais vendeu foi o(a) %s o valor foi: R$ %.2f \n",mo, ano, mais_vendeu.getNome(), valor_vendido);
+					System.out.println("---------------------------------------------------------------");
+					mo++;
+					if(mo == 13) {
+						mo = 1;
+						ano++;
+					}
+				}
 				break;
 			default:
 				System.exit(0);
